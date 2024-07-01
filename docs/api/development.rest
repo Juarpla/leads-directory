@@ -1,0 +1,18 @@
+// LOCALHOST
+### GET all leads
+GET http://localhost:8080/leads HTTP/3.0
+
+### POST save a lead
+POST http://localhost:8080/leads HTTP/3.0
+Content-Type: application/json
+
+{
+  "firstName": "Bob",
+  "lastName": "Brown",
+  "email": "bob.brown@example.com",
+  "phone": "+1-555-456-7890",
+  "birthday": "1988-02-05",
+  "address": "101 Pine St, Houston, TX 77001",
+  "occupation": "Sales Manager",
+  "companyId": "6682aec4fe42a7e3cb4dc4e1"
+}

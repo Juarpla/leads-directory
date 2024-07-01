@@ -1,0 +1,29 @@
+[
+  {
+    "companyName": "Tech Corp",
+    "email": "contact@techcorp.com",
+    "phone": "+1-555-987-6543",
+    "address": "789 Silicon Blvd, San Francisco, CA 94107",
+    "industry": "Technology",
+    "founded": "2005-04-01",
+    "numberOfEmployees": 500
+  },
+  {
+    "companyName": "Creative Inc",
+    "email": "info@creativeinc.com",
+    "phone": "+1-555-876-5432",
+    "address": "123 Innovation St, Austin, TX 73301",
+    "industry": "Design",
+    "founded": "2010-09-15",
+    "numberOfEmployees": 150
+  },
+  {
+    "companyName": "Market Pros",
+    "email": "support@marketpros.com",
+    "phone": "+1-555-765-4321",
+    "address": "456 Business Rd, New York, NY 10018",
+    "industry": "Marketing",
+    "founded": "2015-02-20",
+    "numberOfEmployees": 300
+  }
+]
