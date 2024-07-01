@@ -7,15 +7,11 @@
   },
   "host": "localhost:8080",
   "basePath": "/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["http"],
   "paths": {
     "/": {
       "get": {
-        "tags": [
-          "Welcome"
-        ],
+        "tags": ["Welcome"],
         "description": "",
         "responses": {
           "200": {
@@ -26,13 +22,9 @@
     },
     "/leads/": {
       "get": {
-        "tags": [
-          "Leads"
-        ],
+        "tags": ["Leads"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "default": {
             "description": ""
@@ -40,9 +32,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Leads"
-        ],
+        "tags": ["Leads"],
         "description": "",
         "parameters": [
           {
