@@ -51,7 +51,7 @@ leadCont.saveLead = async (req, res) => {
     companyId: req.body.companyId,
   };
   const response = await leadModel.saveLead(newLead);
-  if (response.acknowledged) {
+  if (response.insertedId) {
     res.status(201).json(response);
   } else {
     res.status(500).json(

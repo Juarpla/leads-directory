@@ -2,32 +2,33 @@ const express = require("express");
 const router = new express.Router();
 const leadController = require("../controllers/leadController");
 const leadValidate = require("../utils/lead-validation");
+const util = require("../utils");
 
-router.get("/", leadController.getAllLeads);
+router.get("/", util.handleErrors(leadController.getAllLeads));
 router.get(
   "/:id",
   leadValidate.addMongoIdRules(),
   leadValidate.checkData,
-  leadController.getLeadById,
+  util.handleErrors(leadController.getLeadById),
 );
 router.post(
   "/",
   leadValidate.addLeadRules(),
   leadValidate.checkData,
-  leadController.saveLead,
+  util.handleErrors(leadController.saveLead),
 );
 router.put(
   "/:id",
   leadValidate.addMongoIdRules(),
   leadValidate.addLeadRules(),
   leadValidate.checkData,
-  leadController.updateLead,
+  util.handleErrors(leadController.updateLead),
 );
 router.delete(
   "/:id",
-  leadValidate.addLeadRules(),
+  leadValidate.addMongoIdRules(),
   leadValidate.checkData,
-  leadController.deleteLead,
+  util.handleErrors(leadController.deleteLead),
 );
 
 module.exports = router;

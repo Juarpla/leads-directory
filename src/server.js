@@ -7,6 +7,7 @@ const database = require("./database");
 const bodyParser = require("body-parser");
 const responseConfig = require("./utils/responseConfig");
 const process = require("process");
+const util = require("./utils");
 
 database.initDb((err, _db) =>
   err ? console.error(err) : console.log("Connected to MongoDB"),
@@ -16,16 +17,11 @@ app.use(bodyParser.json());
 app.use(responseConfig.setHeaders);
 app.use("/", swaggerRoutes);
 app.use("/", routes);
+app.use(util.handleRoteError);
 
-process.on("uncaughtException", (err, origin) => {
-  const response = {
-    Process: process.stderr.fd,
-    "Caught exception": `${err.name}: ${err.message}`,
-    "Exception origin": origin,
-    "Stack trace": err.stack,
-  };
-  console.error("Uncaught Exception -> ", response);
-});
+app.use(util.expressErrorHandler);
+process.on("uncaughtException", util.handleUncaughtException);
+process.on("unhandledRejection", util.handleUnhandledRejection);
 
 const port = process.env.PORT || 8080;
 const host = process.env.HOST;
