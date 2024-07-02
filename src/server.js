@@ -6,19 +6,26 @@ const swaggerRoutes = require("./routes/swaggerRoutes");
 const database = require("./database");
 const bodyParser = require("body-parser");
 const responseConfig = require("./utils/responseConfig");
+const process = require("process");
 
-database.initDb((err, db) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(`Connected to MongoDB`);
-  }
-});
+database.initDb((err, _db) =>
+  err ? console.error(err) : console.log("Connected to MongoDB"),
+);
 
 app.use(bodyParser.json());
 app.use(responseConfig.setHeaders);
 app.use("/", swaggerRoutes);
 app.use("/", routes);
+
+process.on("uncaughtException", (err, origin) => {
+  const response = {
+    Process: process.stderr.fd,
+    "Caught exception": `${err.name}: ${err.message}`,
+    "Exception origin": origin,
+    "Stack trace": err.stack,
+  };
+  console.error("Uncaught Exception -> ", response);
+});
 
 const port = process.env.PORT || 8080;
 const host = process.env.HOST;

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const leadRoutes = require("./leadRoutes");
+const companyRoutes = require("./companyRoutes");
 
 router.get("/", (req, res) => {
   //#swagger.tags=["Welcome"]
@@ -7,5 +8,6 @@ router.get("/", (req, res) => {
 });
 
 router.use("/leads", leadRoutes);
+router.use("/companies", companyRoutes);
 
 module.exports = router;

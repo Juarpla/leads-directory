@@ -2,6 +2,9 @@
 ### GET all leads
 GET http://localhost:8080/leads HTTP/3.0
 
+### GET lead by Id
+GET http://localhost:8080/leads/6682b079fe42a7e3cb4dc4e7 HTTP/3.0
+
 ### POST save a lead
 POST http://localhost:8080/leads HTTP/3.0
 Content-Type: application/json
@@ -16,3 +19,25 @@ Content-Type: application/json
   "occupation": "Sales Manager",
   "companyId": "6682aec4fe42a7e3cb4dc4e1"
 }
+
+### PUT update a lead
+PUT http://localhost:8080/leads/6682b079fe42a7e3cb4dc4eb HTTP/3.0
+Content-Type: application/json
+
+{
+  "firstName": "Javier",
+  "lastName": "Miller",
+  "email": "javier.miller@example.com",
+  "phone": "+1-555-678-8020",
+  "birthday": "1969-09-30",
+  "address": "303 Cedar St, Philadelphia, PA 19101",
+  "occupation": "Financial Analyst",
+  "companyId": "6682aec4fe42a7e3cb4dc4e3"
+}
+
+### DELETE delete a lead
+DELETE http://localhost:8080/leads/6682b079fe42a7e3cb4dc4eb HTTP/3.0
+
+//
+### GET all companies
+GET http://localhost:8080/companies HTTP/3.0

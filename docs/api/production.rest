@@ -2,6 +2,9 @@
 ### GET all leads
 GET https://leads-directory.onrender.com/leads HTTP/3.0
 
+### GET lead by Id
+GET http://leads-directory.onrender.com/leads/6682b079fe42a7e3cb4dc4e7 HTTP/3.0
+
 ### POST save a lead
 POST https://leads-directory.onrender.com/leads HTTP/3.0
 Content-Type: application/json
@@ -16,3 +19,25 @@ Content-Type: application/json
   "occupation": "Sales Manager",
   "companyId": "6682aec4fe42a7e3cb4dc4e1"
 }
+
+### PUT update a lead
+PUT http://leads-directory.onrender.com/leads/6682b079fe42a7e3cb4dc4eb HTTP/3.0
+Content-Type: application/json
+
+{
+  "firstName": "Javier",
+  "lastName": "Miller",
+  "email": "javier.miller@example.com",
+  "phone": "+1-555-678-8020",
+  "birthday": "1969-09-30",
+  "address": "303 Cedar St, Philadelphia, PA 19101",
+  "occupation": "Financial Analyst",
+  "companyId": "6682aec4fe42a7e3cb4dc4e3"
+}
+
+### DELETE delete a lead
+DELETE http://leads-directory.onrender.com/leads/6682b079fe42a7e3cb4dc4eb HTTP/3.0
+
+//
+### GET all companies
+GET http://leads-directory.onrender.com/companies HTTP/3.0
