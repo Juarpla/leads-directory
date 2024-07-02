@@ -12,7 +12,7 @@ Welcome to **Leads Directory**! This is a Node.js application that allows you to
 
 ## Installation
 
-To get started with Contacts Store, follow these steps:
+To get started with Leads Directory, follow these steps:
 
 1. Clone the repository:
     ```bash
@@ -46,6 +46,7 @@ Here are the available API endpoints:
 - **POST** `/leads` - Register a new lead.
 - **PUT** `/leads/:id` - Modify a lead by ID.
 - **DELETE** `/leads/:id` - Delete a lead by ID.
+- **GET** `/companies` - Retrieve all companies.
 
 
 ## Documentation
