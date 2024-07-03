@@ -16,7 +16,7 @@ database.initDb((err, _db) =>
 app.use(bodyParser.json());
 app.use(responseConfig.setHeaders);
 app.use("/", swaggerRoutes);
-app.use("/", routes);
+app.use("/", util.handleErrors(routes));
 app.use(util.handleRoteError);
 
 app.use(util.expressErrorHandler);
