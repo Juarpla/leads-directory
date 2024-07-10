@@ -7,9 +7,7 @@
   },
   "host": "localhost:8080",
   "basePath": "/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["http"],
   "securityDefinitions": {
     "oauth2": {
       "type": "oauth2",
@@ -21,9 +19,7 @@
   "paths": {
     "/": {
       "get": {
-        "tags": [
-          "Home"
-        ],
+        "tags": ["Home"],
         "description": "",
         "responses": {
           "200": {
@@ -34,9 +30,7 @@
     },
     "/logout": {
       "get": {
-        "tags": [
-          "Auth"
-        ],
+        "tags": ["Auth"],
         "description": "",
         "responses": {
           "default": {
@@ -47,13 +41,9 @@
     },
     "/leads/": {
       "get": {
-        "tags": [
-          "Leads"
-        ],
+        "tags": ["Leads"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "400": {
             "description": "Bad Request"
@@ -61,9 +51,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Leads"
-        ],
+        "tags": ["Leads"],
         "description": "",
         "parameters": [
           {
@@ -115,13 +103,9 @@
     },
     "/leads/{id}": {
       "get": {
-        "tags": [
-          "Leads"
-        ],
+        "tags": ["Leads"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -137,9 +121,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Leads"
-        ],
+        "tags": ["Leads"],
         "description": "",
         "parameters": [
           {
@@ -195,9 +177,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Leads"
-        ],
+        "tags": ["Leads"],
         "description": "",
         "parameters": [
           {
@@ -222,13 +202,9 @@
     },
     "/companies/": {
       "get": {
-        "tags": [
-          "Companies"
-        ],
+        "tags": ["Companies"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "400": {
             "description": "Bad Request"

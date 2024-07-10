@@ -7,7 +7,9 @@
     "birthday": "1990-05-15",
     "address": "123 Main St, New York, NY 10001",
     "occupation": "Software Engineer",
-    "companyId": "6682aec4fe42a7e3cb4dc4e1"
+    "companyId": "6682aec4fe42a7e3cb4dc4e1",
+    "campaignId": "668ecd2e57f1246b9044c34d",
+    "tagId": "668ecd0957f1246b9044c34b"
   },
   {
     "firstName": "Jane",
@@ -17,7 +19,9 @@
     "birthday": "1985-08-23",
     "address": "456 Elm St, Los Angeles, CA 90001",
     "occupation": "Graphic Designer",
-    "companyId": "6682aec4fe42a7e3cb4dc4e2"
+    "companyId": "6682aec4fe42a7e3cb4dc4e2",
+    "campaignId": "668ecd2e57f1246b9044c34e",
+    "tagId": "668ecd0957f1246b9044c34b"
   },
   {
     "firstName": "Alice",
@@ -27,7 +31,9 @@
     "birthday": "1992-11-12",
     "address": "789 Maple Ave, Chicago, IL 60601",
     "occupation": "Marketing Specialist",
-    "companyId": "6682aec4fe42a7e3cb4dc4e3"
+    "companyId": "6682aec4fe42a7e3cb4dc4e3",
+    "campaignId": "668ecd2e57f1246b9044c34f",
+    "tagId": "668ecd0957f1246b9044c34a"
   },
   {
     "firstName": "Bob",
@@ -37,7 +43,9 @@
     "birthday": "1988-02-05",
     "address": "101 Pine St, Houston, TX 77001",
     "occupation": "Sales Manager",
-    "companyId": "6682aec4fe42a7e3cb4dc4e1"
+    "companyId": "6682aec4fe42a7e3cb4dc4e1",
+    "campaignId": "668ecd2e57f1246b9044c34f",
+    "tagId": "668ecd0957f1246b9044c34a"
   },
   {
     "firstName": "Carol",
@@ -47,7 +55,9 @@
     "birthday": "1991-06-18",
     "address": "202 Oak St, Phoenix, AZ 85001",
     "occupation": "Product Manager",
-    "companyId": "6682aec4fe42a7e3cb4dc4e2"
+    "companyId": "6682aec4fe42a7e3cb4dc4e2",
+    "campaignId": "668ecd2e57f1246b9044c34e",
+    "tagId": "668ecd0957f1246b9044c349"
   },
   {
     "firstName": "David",
@@ -57,6 +67,8 @@
     "birthday": "1987-09-30",
     "address": "303 Cedar St, Philadelphia, PA 19101",
     "occupation": "Financial Analyst",
-    "companyId": "6682aec4fe42a7e3cb4dc4e3"
+    "companyId": "6682aec4fe42a7e3cb4dc4e3",
+    "campaignId": "668ecd2e57f1246b9044c34d",
+    "tagId": "668ecd0957f1246b9044c349"
   }
 ]

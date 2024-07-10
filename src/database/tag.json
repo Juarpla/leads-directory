@@ -1,0 +1,14 @@
+[
+  {
+    "name": "High Priority",
+    "description": "Leads that need immediate attention."
+  },
+  {
+    "name": "Newsletter Subscriber",
+    "description": "Leads that have subscribed to the newsletter."
+  },
+  {
+    "name": "Follow-up Required",
+    "description": "Leads that require a follow-up."
+  }
+]

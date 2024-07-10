@@ -20,11 +20,13 @@ database.initDb((err, _db) =>
 );
 
 app.use(bodyParser.json());
-app.use(session({
-  secret: "secret",
-  resave: false,
-  saveUninitialized: true,
-}));
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+  }),
+);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(responseConfig.setHeaders);
@@ -33,31 +35,28 @@ app.use(cors({ origin: "*" }));
 app.use(favicon("public/favicon.ico"));
 
 passport.use(
-  new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: process.env.CALLBACK_URL,
-  },
-  function (accessToken, refreshToken, profile, done) {
-    //User.findOrCreate({ githubId: profile.id }, function name(err, user) {
-    return done(null, profile);
-    //}); 
-  },
-));
+  new GitHubStrategy(
+    {
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: process.env.CALLBACK_URL,
+    },
+    function (accessToken, refreshToken, profile, done) {
+      //User.findOrCreate({ githubId: profile.id }, function name(err, user) {
+      return done(null, profile);
+      //});
+    },
+  ),
+);
 passport.serializeUser((user, done) => {
   done(null, user);
 });
-passport.deserializeUser((user, done) => { 
-  done(null, user)
+passport.deserializeUser((user, done) => {
+  done(null, user);
 });
 
-
 app.use("/", swaggerRoutes);
-app.get(
-  "/login",
-  passport.authenticate("github"),
-  authController.login
-);
+app.get("/login", passport.authenticate("github"), authController.login);
 app.get(
   "/github/callback",
   passport.authenticate("github", {
@@ -70,7 +69,6 @@ app.get(
   },
 );
 app.use("/", util.handleErrors(routes));
-
 
 app.use(util.handleRoteError);
 app.use(util.expressErrorHandler);
