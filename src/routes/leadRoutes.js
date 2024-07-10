@@ -1,7 +1,7 @@
 const express = require("express");
 const router = new express.Router();
 const leadController = require("../controllers/leadController");
-const leadValidate = require("../utils/lead-validation");
+const leadValidate = require("../validations/lead-validation");
 const isAuthenticated = require("../utils/auth").isAuthenticated;
 
 router.get("/", leadController.getAllLeads);

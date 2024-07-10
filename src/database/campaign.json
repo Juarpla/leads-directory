@@ -2,19 +2,19 @@
   {
     "name": "Summer Sale",
     "description": "A campaign to boost sales during the summer season.",
-    "start date": "2024-06-01",
-    "end date": "2024-08-31"
+    "startDate": "2024-06-01",
+    "endDate": "2024-08-31"
   },
   {
     "name": "Holiday Discounts",
     "description": "A campaign offering discounts for the holiday season.",
-    "start date": "2024-12-01",
-    "end date": "2024-12-31"
+    "startDate": "2024-12-01",
+    "endDate": "2024-12-31"
   },
   {
     "name": "New Product Launch",
     "description": "Campaign to promote the launch of our new product.",
-    "start date": "2024-09-15",
-    "end date": "2024-10-15"
+    "startDate": "2024-09-15",
+    "endDate": "2024-10-15"
   }
 ]

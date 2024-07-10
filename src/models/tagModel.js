@@ -1,11 +1,11 @@
 const mongodb = require("../database");
 
-async function getAllCompanies() {
+async function getAllTags() {
   try {
     const result = await mongodb
       .getDb()
       .db()
-      .collection("company")
+      .collection("tag")
       .find({})
       .toArray();
     console.log("executed query: " + arguments.callee.name);
@@ -13,7 +13,7 @@ async function getAllCompanies() {
   } catch (error) {
     return {
       error:
-        "No company collection found error: " +
+        "No tag collection found error: " +
         arguments.callee.name +
         ", " +
         error,
@@ -21,60 +21,59 @@ async function getAllCompanies() {
   }
 }
 
-async function saveCompany(newCompany) {
+async function saveTag(newTag) {
   try {
     const result = await mongodb
       .getDb()
       .db()
-      .collection("company")
-      .insertOne(newCompany);
+      .collection("tag")
+      .insertOne(newTag);
     console.log("executed query: " + arguments.callee.name);
     return result;
   } catch (error) {
     return {
-      error:
-        "Company was not saved error " + arguments.callee.name + ", " + error,
+      error: "Tag was not saved error " + arguments.callee.name + ", " + error,
     };
   }
 }
 
-async function updateCompany(newCompany, companyId) {
+async function updateTag(newTag, tagId) {
   try {
     const result = await mongodb
       .getDb()
       .db()
-      .collection("company")
-      .replaceOne({ _id: companyId }, newCompany);
+      .collection("tag")
+      .replaceOne({ _id: tagId }, newTag);
     console.log("executed query: " + arguments.callee.name);
     return result;
   } catch (error) {
     return {
       error:
-        "Company was not updated error " + arguments.callee.name + ", " + error,
+        "Tag was not updated error " + arguments.callee.name + ", " + error,
     };
   }
 }
 
-async function deleteCompany(companyId) {
+async function deleteTag(tagId) {
   try {
     const result = await mongodb
       .getDb()
       .db()
-      .collection("company")
-      .deleteOne({ _id: companyId });
+      .collection("tag")
+      .deleteOne({ _id: tagId });
     console.log("executed query: " + arguments.callee.name);
     return result;
   } catch (error) {
     return {
       error:
-        "Company was not deleted error " + arguments.callee.name + ", " + error,
+        "Tag was not deleted error " + arguments.callee.name + ", " + error,
     };
   }
 }
 
 module.exports = {
-  getAllCompanies,
-  saveCompany,
-  updateCompany,
-  deleteCompany,
+  getAllTags,
+  saveTag,
+  updateTag,
+  deleteTag,
 };

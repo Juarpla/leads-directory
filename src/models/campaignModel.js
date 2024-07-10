@@ -1,11 +1,11 @@
 const mongodb = require("../database");
 
-async function getAllCompanies() {
+async function getAllCampaigns() {
   try {
     const result = await mongodb
       .getDb()
       .db()
-      .collection("company")
+      .collection("campaign")
       .find({})
       .toArray();
     console.log("executed query: " + arguments.callee.name);
@@ -13,7 +13,7 @@ async function getAllCompanies() {
   } catch (error) {
     return {
       error:
-        "No company collection found error: " +
+        "No campaign collection found error: " +
         arguments.callee.name +
         ", " +
         error,
@@ -21,60 +21,66 @@ async function getAllCompanies() {
   }
 }
 
-async function saveCompany(newCompany) {
+async function saveCampaign(newCampaign) {
   try {
     const result = await mongodb
       .getDb()
       .db()
-      .collection("company")
-      .insertOne(newCompany);
+      .collection("campaign")
+      .insertOne(newCampaign);
     console.log("executed query: " + arguments.callee.name);
     return result;
   } catch (error) {
     return {
       error:
-        "Company was not saved error " + arguments.callee.name + ", " + error,
+        "Campaign was not saved error " + arguments.callee.name + ", " + error,
     };
   }
 }
 
-async function updateCompany(newCompany, companyId) {
+async function updateCampaign(newCampaign, campaignId) {
   try {
     const result = await mongodb
       .getDb()
       .db()
-      .collection("company")
-      .replaceOne({ _id: companyId }, newCompany);
+      .collection("campaign")
+      .replaceOne({ _id: campaignId }, newCampaign);
     console.log("executed query: " + arguments.callee.name);
     return result;
   } catch (error) {
     return {
       error:
-        "Company was not updated error " + arguments.callee.name + ", " + error,
+        "Campaign was not updated error " +
+        arguments.callee.name +
+        ", " +
+        error,
     };
   }
 }
 
-async function deleteCompany(companyId) {
+async function deleteCampaign(campaignId) {
   try {
     const result = await mongodb
       .getDb()
       .db()
-      .collection("company")
-      .deleteOne({ _id: companyId });
+      .collection("campaign")
+      .deleteOne({ _id: campaignId });
     console.log("executed query: " + arguments.callee.name);
     return result;
   } catch (error) {
     return {
       error:
-        "Company was not deleted error " + arguments.callee.name + ", " + error,
+        "Campaign was not deleted error " +
+        arguments.callee.name +
+        ", " +
+        error,
     };
   }
 }
 
 module.exports = {
-  getAllCompanies,
-  saveCompany,
-  updateCompany,
-  deleteCompany,
+  getAllCampaigns,
+  saveCampaign,
+  updateCampaign,
+  deleteCampaign,
 };
