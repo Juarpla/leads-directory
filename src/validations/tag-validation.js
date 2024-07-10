@@ -11,7 +11,7 @@ validate.addMongoIdRules = () => [
     .withMessage("Invalid ID format"),
 ];
 
-validate.addCampaignRules = () => [
+validate.addTagRules = () => [
   body("name").trim().escape().notEmpty().withMessage("Name is required"),
   body("description")
     .trim()
