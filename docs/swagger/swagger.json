@@ -10,16 +10,37 @@
   "schemes": [
     "http"
   ],
+  "securityDefinitions": {
+    "oauth2": {
+      "type": "oauth2",
+      "description": "When you click “Authorize”, you will be redirected to a website where you can log in through a third-party service.",
+      "authorizationUrl": "http://localhost:8080/github/callback",
+      "flow": "redirectLink"
+    }
+  },
   "paths": {
     "/": {
       "get": {
         "tags": [
-          "Welcome"
+          "Home"
         ],
         "description": "",
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }

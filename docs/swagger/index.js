@@ -15,6 +15,15 @@ const doc = {
       "Welcome to Lead Directory! This is a Node.js application that allows you to manage leads.",
     version: "1.0.0",
   },
+  securityDefinitions: {
+    oauth2: {
+      type: "oauth2",
+      description:
+        "When you click “Authorize”, you will be redirected to a website where you can log in through a third-party service.",
+      authorizationUrl: process.env.CALLBACK_URL,
+      flow: "redirectLink",
+    },
+  },
   host: host,
   schemes: schemes,
 };
