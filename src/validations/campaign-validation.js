@@ -20,12 +20,12 @@ validate.addCampaignRules = () => [
     .withMessage("Description is required"),
   body("startDate")
     .trim()
-    .isDate({ format: "YYYY-MM-DD" })
-    .withMessage("Invalid start date"),
+    .isISO8601()
+    .withMessage("Invalid date format. Use YYYY-MM-DD"),
   body("endDate")
     .trim()
-    .isDate({ format: "YYYY-MM-DD" })
-    .withMessage("Invalid end date"),
+    .isISO8601()
+    .withMessage("Invalid date format. Use YYYY-MM-DD"),
 ];
 
 validate.checkData = async (req, res, next) => {

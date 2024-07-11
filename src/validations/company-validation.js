@@ -24,8 +24,8 @@ validate.addCompanyRules = () => [
     .withMessage("Invalid email address"),
   body("phone")
     .trim()
-    .matches(/^\+?[1-9]\d{1,14}$/)
-    .withMessage("Invalid phone number"),
+    .matches(/^\+\d{1,3}-\d{3}-\d{3}-\d{4}$/)
+    .withMessage("Invalid phone number format. Use +X-XXX-XXX-XXXX"),
   body("address").trim().escape().notEmpty().withMessage("Address is required"),
   body("industry")
     .trim()
@@ -34,8 +34,10 @@ validate.addCompanyRules = () => [
     .withMessage("Industry is required"),
   body("founded")
     .trim()
-    .isDate({ format: "YYYY-MM-DD" })
-    .withMessage("Invalid founded date"),
+    .isISO8601()
+    .withMessage("Invalid date format. Use YYYY-MM-DD")
+    .isBefore(new Date().toISOString())
+    .withMessage("Date must be in the past"),
   body("numberOfEmployees")
     .trim()
     .isInt({ min: 1 })
