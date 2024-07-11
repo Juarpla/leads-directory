@@ -4,7 +4,7 @@ const ObjectId = require("mongodb").ObjectId;
 const campaignCont = {};
 
 campaignCont.getAllCampaigns = async (req, res, next) => {
-  //#swagger.campaigns=["Campaigns"]
+  //#swagger.tags=["Campaigns"]
   const response = await campaignModel.getAllCampaigns();
   if (response && response[0]?.name) {
     res
@@ -21,7 +21,7 @@ campaignCont.getAllCampaigns = async (req, res, next) => {
 };
 
 campaignCont.saveCampaign = async (req, res) => {
-  //#swagger.campaigns=["Campaigns"]
+  //#swagger.tags=["Campaigns"]
   const newCampaign = {
     name: req.body.name,
     description: req.body.description,
@@ -41,7 +41,7 @@ campaignCont.saveCampaign = async (req, res) => {
 };
 
 campaignCont.updateCampaign = async (req, res) => {
-  //#swagger.campaigns=["Campaigns"]
+  //#swagger.tags=["Campaigns"]
   const campaignId = ObjectId.createFromHexString(req.params.id);
   const newCampaign = {
     name: req.body.name,
@@ -62,7 +62,7 @@ campaignCont.updateCampaign = async (req, res) => {
 };
 
 campaignCont.deleteCampaign = async (req, res) => {
-  //#swagger.campaigns=["Campaigns"]
+  //#swagger.tags=["Campaigns"]
   const campaignId = ObjectId.createFromHexString(req.params.id);
   const response = await campaignModel.deleteCampaign(campaignId);
   if (response.deletedCount > 0) {
