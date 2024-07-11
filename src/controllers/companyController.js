@@ -27,7 +27,7 @@ companyCont.saveCompany = async (req, res) => {
     address: req.body.address,
     industry: req.body.industry,
     founded: req.body.founded,
-    numberOfEmployees: req.body.numberOfEmployees,
+    numberOfEmployees: Number(req.body.numberOfEmployees),
   };
   const response = await companyModel.saveCompany(newCompany);
   if (response.insertedId) {
@@ -51,7 +51,7 @@ companyCont.updateCompany = async (req, res) => {
     address: req.body.address,
     industry: req.body.industry,
     founded: req.body.founded,
-    numberOfEmployees: req.body.numberOfEmployees,
+    numberOfEmployees: Number(req.body.numberOfEmployees),
   };
   const response = await companyModel.updateCompany(newCompany, companyId);
   if (response.modifiedCount > 0) {
